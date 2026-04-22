@@ -1,165 +1,397 @@
 <!DOCTYPE html>
 <html lang="pl">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portoflio Graficzne - Michał Floras</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Michał Floras — Portfolio Graficzne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Nagłówek -->
-    <header>
-        <nav class="navbar">
-            <div class="container">
-                <div class="navbar-menu">
-                    <div class="navbar-start">
-                        <a class="navbar-item" href="index.html">Strona główna</a>
-                        <a class="navbar-item" href="#portfolio">Portfolio</a>
-                        <a class="navbar-item" href="o_mnie.html">O mnie</a>
-                        <a class="navbar-item" href="kontakt.html">Kontakt</a>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <!-- Główna zawartość -->
-    <main>
-        <!-- Strona główna -->
-        <section class="section" id="strona_glowna">
-            <div class="container main-content">
-                <div class="welcome-text">
-                    <h1 id="portfolio-title" class="zoom-in">Michał Floras Portfolio</h1>
-                </div>
-                <div class="intro-text">
-                    <p class="subtitle">Nazywam się Michał Floras. Jestem studentem Akademii Górniczo-Hutniczej, gdzie studiuję na kierunku Automatyki Robotyki Przemysłowej. Jestem członkiem koła Naukowego Centrum Mediów - redakcji technicznej, gdzie swój wolny czas poza studiowaniem poświęcam różnego rodzaju działalności, takiej jak realizacja newsów radiowych, nagrania lektorskie, obsługa zespołu muzycznego podczas liveset'u oraz montaż wideo materiałów emitowanych na platformie YouTube na kanale radia a także grafiką komputerowa, tworzenie miniaturek, banerów czy logotypów.</p>
-                </div>
-            </div>
-        </section>
-        <!-- Portfolio -->
-        <section class="section" id="portfolio">
-            <div class="container">
-                <h2 class="title section-title">Moje pracę</h2>
-                <div class="gallery interactive-gallery">
-                    <div class="gallery-item">
-                        <img src="erasmus1.png" alt ="logo erasmusa przygotowane w ramach projektu Culture Shadow Erasmus + Project">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="l2.jpg" alt="logo szkolnego radiawęzła RADIO Copernicus">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="l1.png" alt="logo szkolnego projektu dotyczącego walki z depresją">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="logo jach 1.jpeg" alt="logo mojej szkoły Liceum Ogólnokształcące im. Mikołaja Kopernika w Tarnobrzegu ">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="plyta przod wnetrze.png" alt="okładka płyty">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="sgi1.png" alt="zespół SGI Lesser 2021/2022">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="web.png" alt="zespół webmastering 2021/2022">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="logo_2.jpg" alt="logo P1B">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="okladka.png" alt="okładka książki projektu Culture Shadow Erasmus + Project">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="plakat_1.png" alt="projekt albumu na szkle akrylow wzorowanym na ''spotify glass''">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="karty1.png" alt="autorskie karty Jenga z wymyślonymi przez siebie zadaniami">
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Stopka -->
-        <footer class="footer">
-            <div class="content has-text-centered">
-                <p>© 2023 Portfolio Graficzne. Wszelkie prawa zastrzeżone.</p>
-            </div>
-        </footer>
-        <div id="myModal" class="modal">
-            <span class="close">&times;</span>
-            <img class="modal-content" id="img01">
-            <div id="caption"></div>
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">MF</a>
+      <button class="nav__burger" id="burger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav__links" id="navLinks">
+        <li><a href="#portfolio" class="nav__link">Portfolio</a></li>
+        <li><a href="#about" class="nav__link">O mnie</a></li>
+        <li><a href="#contact" class="nav__link">Kontakt</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero__bg"></div>
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Projektant Graficzny &amp; Multimedialist</p>
+      <h1 class="hero__title reveal">
+        <span>Michał</span><br>
+        <span class="hero__title--accent">Floras</span>
+      </h1>
+      <p class="hero__sub reveal">Student AGH · Centrum Mediów · Adobe Suite</p>
+      <a href="#portfolio" class="btn reveal">Zobacz prace</a>
+    </div>
+    <div class="hero__scroll">
+      <span></span>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="section" id="portfolio">
+    <div class="container">
+      <div class="section__header reveal">
+        <h2 class="section__title">Portfolio</h2>
+        <p class="section__desc">Wybrane projekty graficzne — logotypy, okładki, materiały drukowane i wizualizacje.</p>
+      </div>
+
+      <div class="filters reveal">
+        <button class="filter-btn active" data-filter="all">Wszystkie</button>
+        <button class="filter-btn" data-filter="logo">Logotypy</button>
+        <button class="filter-btn" data-filter="print">Druk &amp; Media</button>
+        <button class="filter-btn" data-filter="other">Inne</button>
+      </div>
+
+      <div class="grid" id="grid">
+        <div class="grid__item reveal" data-cat="logo">
+          <img src="erasmus1.png" alt="Logo Erasmus+ Culture Shadow Project" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Logo Erasmus+ Culture Shadow</span>
+          </div>
         </div>
-        <script>
-            var slideIndex = 1;
-            var modal = document.getElementById("myModal");
-            var img = document.getElementsByClassName("gallery-item");
-            var modalImg = document.getElementById("img01");
-            var captionText = document.getElementById("caption");
+        <div class="grid__item reveal" data-cat="logo">
+          <img src="l2.jpg" alt="Logo Radio Copernicus" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Logo Radio Copernicus</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="logo">
+          <img src="l1.png" alt="Logo projektu walki z depresją" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Logo projektu — walka z depresją</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="logo">
+          <img src="logo jach 1.jpeg" alt="Logo LO im. Mikołaja Kopernika" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Logo LO im. M. Kopernika</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="print">
+          <img src="plyta przod wnetrze.png" alt="Okładka płyty CD" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Okładka płyty CD</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="other">
+          <img src="sgi1.png" alt="Grafika SGI Lesser 2021/2022" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">SGI Lesser 2021/2022</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="other">
+          <img src="web.png" alt="Grafika Webmastering 2021/2022" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Webmastering 2021/2022</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="logo">
+          <img src="logo_2.jpg" alt="Logo P1B" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Logo P1B</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="print">
+          <img src="okladka.png" alt="Okładka książki Erasmus+" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Okładka książki — Erasmus+</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="print">
+          <img src="plakat_1.png" alt="Album Spotify Glass — szkło akrylowe" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Spotify Glass — album akrylowy</span>
+          </div>
+        </div>
+        <div class="grid__item reveal" data-cat="other">
+          <img src="karty1.png" alt="Autorskie karty Jenga" loading="lazy">
+          <div class="grid__overlay">
+            <span class="grid__label">Autorskie karty Jenga</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            for (let i = 0; i < img.length; i++) {
-                img[i].onclick = function() {
-                    modal.style.display = "block";
-                    modalImg.src = this.firstElementChild.src;
-                    captionText.innerHTML = this.firstElementChild.alt;
-                    showSlides(slideIndex = i + 1);
-                }
-            }
+  <!-- ABOUT -->
+  <section class="section section--dark" id="about">
+    <div class="container">
+      <div class="about">
+        <div class="about__left reveal">
+          <div class="section__header">
+            <h2 class="section__title">O mnie</h2>
+          </div>
+          <p class="about__text">
+            Jestem studentem <strong>Akademii Górniczo-Hutniczej</strong> na kierunku Automatyki Robotyki Przemysłowej.
+            Jako aktywny członek <strong>Centrum Mediów AGH</strong> realizuję newsy radiowe, nagrania lektorskie,
+            obsługuję sprzęt podczas koncertów na żywo oraz montuję materiały wideo na YouTube.
+          </p>
+          <p class="about__text">
+            Grafiką komputerową zajmuję się od wielu lat — tworzę logotypy, bannery, miniatury i materiały drukowane.
+            W latach 2017–2022 pracowałem jako drugi akustyk w <strong>Tarnobrzeskim Domu Kultury</strong>.
+          </p>
 
-            function plusSlides(n) {
-                showSlides(slideIndex += n);
-            }
+          <h3 class="about__subtitle">Umiejętności</h3>
+          <div class="skills">
+            <span class="skill">Adobe Photoshop</span>
+            <span class="skill">Adobe Illustrator</span>
+            <span class="skill">Adobe Lightroom</span>
+            <span class="skill">Adobe Audition</span>
+            <span class="skill">Adobe Premiere Pro</span>
+            <span class="skill">Final Cut Pro</span>
+            <span class="skill">Grafika rastrowa</span>
+            <span class="skill">Grafika wektorowa</span>
+            <span class="skill">Reżyseria dźwięku</span>
+            <span class="skill">Montaż wideo</span>
+          </div>
+        </div>
 
-            function showSlides(n) {
-                var i;
-                var slides = document.getElementsByClassName("gallery-item");
-                if (n > slides.length) { slideIndex = 1 }
-                if (n < 1) { slideIndex = slides.length }
-                for (i = 0; i < slides.length; i++) {
-                    if (slides[i].firstElementChild.src == modalImg.src) {
-                        slideIndex = i + 1;
-                    }
-                }
-                if (n > slideIndex) { modalImg.src = slides[slideIndex].firstElementChild.src; }
-                if (n < slideIndex) { modalImg.src = slides[slideIndex - 2].firstElementChild.src; }
-            }
+        <div class="about__right reveal">
+          <div class="timeline">
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__body">
+                <span class="timeline__date">2017 – 2022</span>
+                <h4 class="timeline__role">Akustyk (staż)</h4>
+                <p class="timeline__place">Tarnobrzeski Dom Kultury</p>
+                <p class="timeline__desc">Realizacja nagrań audio, obsługa sceny podczas imprez, szkoleń i spektakli. Szkolenie z obsługi miksera CADAC CDC 6.</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__body">
+                <span class="timeline__date">2019 – 2022</span>
+                <h4 class="timeline__role">Webmaster &amp; Grafik</h4>
+                <p class="timeline__place">LO im. M. Kopernika, Tarnobrzeg</p>
+                <p class="timeline__desc">Projekt i udoskonalanie strony szkoły, logo Radia Copernicus, szablony graficzne, logo gazetki "Lesser".</p>
+              </div>
+            </div>
+            <div class="timeline__item">
+              <div class="timeline__dot"></div>
+              <div class="timeline__body">
+                <span class="timeline__date">2022 – teraz</span>
+                <h4 class="timeline__role">Członek Centrum Mediów</h4>
+                <p class="timeline__place">AGH, Kraków</p>
+                <p class="timeline__desc">Newsy radiowe, nagrania lektorskie, obsługa techniczna koncertów, montaż wideo na YouTube.</p>
+              </div>
+            </div>
+          </div>
 
-            var span = document.getElementsByClassName("close")[0];
-            span.onclick = function() {
-                modal.style.display = "none";
-            }
-        </script>
-    </main>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script>
-        var swiper = new Swiper('.swiper-container', {
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            slidesPerView: 3,
-            spaceBetween: 30,
-            breakpoints: {
-                640: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 40,
-                },
-                1024: {
-                    slidesPerView: 3,
-                    spaceBetween: 50,
-                },
-            }
+          <div class="references">
+            <h3 class="about__subtitle">Referencje</h3>
+            <blockquote class="quote">
+              <p>"Zlecenia, które mu powierzaliśmy, były wykonane zawsze na czas. Otrzymywaliśmy atrakcyjne i zgodne z naszymi wskazówkami grafiki. Polecamy wszystkim, którzy szukają solidnego grafika."</p>
+              <cite>— prof. Andrzej Lipiec, LO im. M. Kopernika</cite>
+            </blockquote>
+            <blockquote class="quote">
+              <p>"Przez 5 lat znacząco rozwinął swoje umiejętności z zakresu obróbki dźwięku. Współpraca z Michałem to była wielka przyjemność."</p>
+              <cite>— Jan Rożak, Tarnobrzeski Dom Kultury</cite>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="section__header reveal">
+          <h2 class="section__title">Kontakt</h2>
+          <p class="section__desc">Masz projekt? Napisz do mnie.</p>
+        </div>
+        <div class="contact__grid">
+          <div class="contact__info reveal">
+            <div class="contact__item">
+              <span class="contact__icon">✉</span>
+              <a href="mailto:themiwelll@gmail.com">themiwelll@gmail.com</a>
+            </div>
+            <div class="contact__item">
+              <span class="contact__icon">☎</span>
+              <a href="tel:+48510971296">510 971 296</a>
+            </div>
+          </div>
+          <form class="contact__form reveal" id="contactForm">
+            <div class="form-group">
+              <label for="name">Imię i nazwisko</label>
+              <input type="text" id="name" name="name" placeholder="Jan Kowalski" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail</label>
+              <input type="email" id="email" name="email" placeholder="jan@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Wiadomość</label>
+              <textarea id="message" name="message" rows="5" placeholder="Opisz projekt..." required></textarea>
+            </div>
+            <button type="submit" class="btn">Wyślij wiadomość</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2024 Michał Floras — Portfolio Graficzne</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" id="lbClose">✕</button>
+    <button class="lightbox__prev" id="lbPrev">&#8249;</button>
+    <button class="lightbox__next" id="lbNext">&#8250;</button>
+    <div class="lightbox__wrap">
+      <img src="" alt="" id="lbImg">
+      <p class="lightbox__caption" id="lbCaption"></p>
+    </div>
+  </div>
+
+  <script>
+    // Nav scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('nav--scrolled', window.scrollY > 50);
+    });
+
+    // Burger menu
+    const burger = document.getElementById('burger');
+    const navLinks = document.getElementById('navLinks');
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('open');
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
+    });
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const gridItems = document.querySelectorAll('.grid__item');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        gridItems.forEach(item => {
+          const show = filter === 'all' || item.dataset.cat === filter;
+          item.style.opacity = show ? '1' : '0';
+          item.style.pointerEvents = show ? 'auto' : 'none';
+          item.style.transform = show ? 'scale(1)' : 'scale(0.92)';
         });
-    </script>
-    
+      });
+    });
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lbImg');
+    const lbCaption = document.getElementById('lbCaption');
+    const lbClose = document.getElementById('lbClose');
+    const lbPrev = document.getElementById('lbPrev');
+    const lbNext = document.getElementById('lbNext');
+    let currentIndex = 0;
+    let visibleItems = [];
+
+    function openLightbox(index) {
+      visibleItems = [...document.querySelectorAll('.grid__item')].filter(i => i.style.opacity !== '0');
+      currentIndex = index;
+      showSlide(currentIndex);
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function showSlide(n) {
+      if (n < 0) currentIndex = visibleItems.length - 1;
+      else if (n >= visibleItems.length) currentIndex = 0;
+      else currentIndex = n;
+      const item = visibleItems[currentIndex];
+      const img = item.querySelector('img');
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lbCaption.textContent = img.alt;
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    gridItems.forEach((item, i) => {
+      item.addEventListener('click', () => {
+        const allVisible = [...document.querySelectorAll('.grid__item')].filter(it => it.style.opacity !== '0');
+        const idx = allVisible.indexOf(item);
+        openLightbox(idx);
+      });
+    });
+
+    lbClose.addEventListener('click', closeLightbox);
+    lbPrev.addEventListener('click', () => showSlide(currentIndex - 1));
+    lbNext.addEventListener('click', () => showSlide(currentIndex + 1));
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showSlide(currentIndex - 1);
+      if (e.key === 'ArrowRight') showSlide(currentIndex + 1);
+    });
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const btn = e.target.querySelector('button');
+      btn.textContent = 'Wysłano!';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.textContent = 'Wyślij wiadomość';
+        btn.disabled = false;
+        e.target.reset();
+      }, 3000);
+    });
+
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    window.addEventListener('scroll', () => {
+      const pos = window.scrollY + 120;
+      sections.forEach(s => {
+        const top = s.offsetTop;
+        const bottom = top + s.offsetHeight;
+        const link = document.querySelector(`.nav__link[href="#${s.id}"]`);
+        if (link) link.classList.toggle('active', pos >= top && pos < bottom);
+      });
+    });
+  </script>
 </body>
 </html>
-
